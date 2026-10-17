@@ -1,0 +1,13 @@
+{
+    "silent_mode": "off",
+    "mode": "smart",
+    "thumbnail_size": [
+        200,
+        200
+    ],
+    "thumbnail_file_format": "PNG",
+    "thumbnails_cropping": "on",
+    "thumbnail_directory_name": "thumbnails",
+    "output_json_file_name": "workflows.json",
+    "default_category": "workflows"
+}
