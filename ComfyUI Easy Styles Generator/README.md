@@ -1,6 +1,7 @@
-A companion tool for 'Easy Styles Selector (minimal)' node (see 'agi_custom_nodes' repository)
+A companion tool for my 'Easy Styles Selector (minimal)' ComfyUI node ([agi_custom_nodes](https://github.com/ViTa-Plane/agi_custom_nodes)) that automates workflow/styles .json files generation
 
-Generates thumbnails and workflow.json file from ComfyUI generated PNG image gallery.
+It generates thumbnails and workflow.json file from ComfyUI PNG images.
+
 how to use:
   - copy the .py script to an ComfyUI PNG image directory and run it. Follow the menu instructions. Usually the default options are enough
   - copy\move the generated 'thumbnails' folder and 'workflow.json' (you can rename it to example_workflows.json, my_workflows_1.json etc.) to 'ComfyUI\ComfyUI\custom_nodes\agi_custom_nodes\nodes\easy_styles' folder
