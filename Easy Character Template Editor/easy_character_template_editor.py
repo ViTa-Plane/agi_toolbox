@@ -37,7 +37,7 @@ class NestedJSONFillerApp:
     self.create_menu()
     self.create_widgets()
     self.setup_shortcuts()
-    self.load_data()
+    self.load_data(is_initial_load=True)
 
   def create_menu(self):
     menubar = tk.Menu(self.root)
@@ -247,8 +247,15 @@ class NestedJSONFillerApp:
         self.target_path_var.set(filename)
       self.load_data()
 
-  def load_data(self):
+  def load_data(self, is_initial_load=False):
     target_path = self.target_path_var.get()
+
+    # Silently handle missing default file on startup without raising errors
+    if is_initial_load and not os.path.exists(target_path):
+      self.target_path_var.set("No File Loaded (Open a JSON file)")
+      self.target_blocks = [{}]
+      self.populate_block_selector()
+      return
 
     try:
       with open(target_path, "r", encoding="utf-8") as f:
@@ -263,10 +270,11 @@ class NestedJSONFillerApp:
         else:
           self.target_blocks = [{}]
     except Exception as e:
-      messagebox.showerror(
-          "Error", f"Could not load target template JSON:\n{str(e)}"
-      )
-      return
+      if not is_initial_load:
+        messagebox.showerror(
+            "Error", f"Could not load target template JSON:\n{str(e)}"
+        )
+      self.target_blocks = [{}]
 
     self.populate_block_selector()
 
