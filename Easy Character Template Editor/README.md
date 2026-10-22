@@ -1,0 +1,1 @@
+- A small GUI tool for creating/edit  styles/character .json files used in Easy Styles/Character Selector nodes
