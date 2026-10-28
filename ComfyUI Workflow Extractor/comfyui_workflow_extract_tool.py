@@ -1,4 +1,4 @@
-# v4.2 (Multithreaded)
+# v4.2.1 (Multithreaded)
 
 """
 ComfyUI Workflow Extractor & JPEG Converter (Multithreaded)
@@ -199,9 +199,9 @@ def run_menu(force_single_thread=False):
     if force_single_thread:
         print(" Execution Mode: FORCE SINGLE-THREADED")
     print("======================================================")
-    print(" 1. Extract: Only workflows (.json) inside the destination folder")
-    print(" 2. Full: Workflows AND JPEGs inside the destination folder")
-    print(" 3. Mirror Structure: Extract & convert while recreating source subfolder structures inside destination")
+    print(" 1. Extract: Save workflows (.json) inside the destination folder")
+    print(" 2. Full:  Save Workflows and sample JPEGs inside the destination folder")
+    print(" 3. Full + Mirror Structure: Extract & convert while recreating source subfolder structures inside destination")
     print(" 4. Exit")
     print("======================================================")
     
